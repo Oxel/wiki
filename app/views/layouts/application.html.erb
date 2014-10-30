@@ -11,7 +11,7 @@
 
 		<ul class="nav nav-tabs">
 			<li><%= link_to "Wiki", root_path %></li>
-			
+		</ul>
 
 				<div class="pull-right user-info">
 					<% if current_user %>
@@ -22,7 +22,9 @@
 					<% end %>
 				</div>
 
-<%= yield %>
+			<%= yield %>
+		</div>
+
 
 </body>
 </html>
