@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  root to: 'wiki#index'
+  root to: 'application#hello'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
