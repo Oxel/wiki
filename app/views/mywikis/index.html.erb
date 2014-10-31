@@ -1,1 +1,8 @@
 <%= link_to 'New wiki', new_mywiki_path %>
+
+<h3>My wikis</h3>
+
+<% @wikis.each do |wiki| %>
+  <h3><%= wiki.title %></h3>
+  <p><%= wiki.body %></p>
+<% end %>
