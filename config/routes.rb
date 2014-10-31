@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'mywikis/index'
+  resources :mywikis
 
   devise_for :users
 
