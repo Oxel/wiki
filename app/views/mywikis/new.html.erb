@@ -1,6 +1,6 @@
-<%= link_to "New Mywiki", new_mywiki_path %>
 
-<%= form_for(@mywiki) do |f| %>
+
+<%= form_for @mywiki do |f| %>
 	<div>
 		<%= f.label :title %>
 		<%= f.text_field :title %>
@@ -10,8 +10,6 @@
 		<%= f.text_area :body %>
 	</div>
 		
-		<%= f.submit %>
-
-		</p>This is a great page</p>
+	<%= f.submit %>
 
 <% end %>
