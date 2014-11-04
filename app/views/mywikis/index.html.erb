@@ -7,6 +7,7 @@
 	<h3><%= mywiki.title %></h3>
 	<p><%= mywiki.body %><p>
 	<%= link_to "Delete", mywiki, method: :delete, data: {confirm: 'Are you certain you want to delete this wiki?'}, remote: true %>
+	<%= link_to "Edit", edit_mywiki_path(mywiki) %>
 <% end %>
 
 
