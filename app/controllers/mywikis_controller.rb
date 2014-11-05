@@ -6,11 +6,12 @@ class MywikisController < ApplicationController
 	end
 
   def show
+    @mywiki = Mywiki.find(params[:id])
     redirect_to root_path
   end
 
   def index
-  	@mywikis = current_user.mywikis
+    @mywikis = current_user.mywikis
   end
 
   def create
