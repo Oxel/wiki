@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 require 'ffaker'
 
 5.times do
@@ -20,8 +21,8 @@ users = User.all
 
 50.times do
   Mywiki.create(
-    title: Faker::Lorem.words(5),
-    body:  Faker::Lorem.paragraph
+    title: Faker::Lorem.words(5).join(' '),
+    body:  Faker::Lorem.paragraph,
     user: users.sample
   )
 end

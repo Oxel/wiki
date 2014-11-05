@@ -10,7 +10,11 @@ class MywikisController < ApplicationController
   end
 
   def index
-    @mywikis = current_user.mywikis
+    if params[:all_wikis]
+      @mywikis = Mywiki.all
+    else
+      @mywikis = current_user.mywikis
+    end
   end
 
   def create
