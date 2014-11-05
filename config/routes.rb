@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'welcome#index'
+
+  get "allwikis" => "mywikis#show"
   
 end
