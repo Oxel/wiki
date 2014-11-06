@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :mywikis 
+  resources :mywikis
+  resources :subscriptions
 
   
 
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   get "allwikis" => "mywikis#show"
+
+  get "Upgrade" => "subscriptions#new"
   
 end
