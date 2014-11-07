@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141106204623) do
   add_index "mywikis", ["user_id"], name: "index_mywikis_on_user_id"
 
   create_table "subscriptions", force: true do |t|
-    t.integer  "plan_id"
+    t.integer  "plan_id",               default: 1
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
