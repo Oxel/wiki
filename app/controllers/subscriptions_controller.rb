@@ -15,7 +15,7 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def show
-		@subscription = Subscription.find(subscription_params)
+		@subscription = Subscription.find(params[:id])
 	end
 
 	private
