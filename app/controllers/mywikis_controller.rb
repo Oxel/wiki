@@ -11,7 +11,7 @@ class MywikisController < ApplicationController
 
   def index
     if params[:all_wikis]
-      @mywikis = Mywiki.all
+      @mywikis = Mywiki.where(private: false)
     else
       @mywikis = current_user.mywikis
     end
