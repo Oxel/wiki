@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
 
 	def new
-		plan = Plan.find(subscription_params)
+		plan = Plan.find(params[:plan_id])
 		@subscription = plan.subscriptions.build
 	end
 
@@ -25,6 +25,10 @@ class SubscriptionsController < ApplicationController
 
 		def plan_params
 			params.require(:subscription).permit(:plan_id)
+		end
+
+		def plan_id
+			user.subscription.plan_id
 		end
 
 end

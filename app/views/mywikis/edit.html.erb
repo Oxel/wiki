@@ -9,6 +9,11 @@
 		<%= f.label :body %>
 		<%= f.text_area :body %>
 	</div>
+
+	<% Collaborator.all.each do |collaborator| %>
+		<%= check_box_tag "user[collaborator_ids][]", collaborator.id %>
+		<%= collaborator.name %><br/>
+	<% end %>
 		
 	<%= f.submit %>
 

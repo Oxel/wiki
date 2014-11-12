@@ -39,3 +39,5 @@ gem 'redcarpet'
 
 gem 'stripe'
 
+gem 'pundit'
+

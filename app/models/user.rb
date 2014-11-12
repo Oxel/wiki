@@ -4,5 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :mywikis, dependent: :destroy
+  has_many :collaborators
+  has_many :mywikis, through: :collaborators, dependent: :destroy
+
+  def collaborator?
+  	role == 'collaborator'
+  end
+  
 end

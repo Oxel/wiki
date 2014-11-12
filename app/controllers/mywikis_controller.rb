@@ -3,6 +3,7 @@ class MywikisController < ApplicationController
   
 	def new
 		@mywiki = Mywiki.new
+    authorize @mywiki
 	end
 
   def show
@@ -12,10 +13,12 @@ class MywikisController < ApplicationController
 
   def index
     @mywikis = current_user.mywikis
+    authorize @mywikis
   end
 
   def create
   	@mywiki = current_user.mywikis.build(mywiki_params)
+    authorize @mywiki
   	if @mywiki.save
   	 redirect_to root_path, notice: 'Wiki added'
     else
@@ -26,10 +29,12 @@ class MywikisController < ApplicationController
 
   def edit
     @mywiki = Mywiki.find(params[:id])
+    authorize @mywiki
   end
 
   def update
     @mywiki = Mywiki.find(params[:id])
+    authorize @mywiki
     if @mywiki.update(mywiki_params)
       flash[:notice] = "Wiki has been updated."
       redirect_to root_path
