@@ -6,7 +6,7 @@ class MywikisController < ApplicationController
 
   def show
     @mywiki = Mywiki.find(params[:id])
-    redirect_to root_path
+    @users = User.all
   end
 
   def index
