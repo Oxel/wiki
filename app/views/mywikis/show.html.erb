@@ -17,10 +17,11 @@
           <%= div_for(user) do %>
             <td><%= user.name %></td>
             <td><%= label_tag :user_ids, user.email %></td>
-            <td><%= check_box_tag :user_ids, user.id %></td>
+            <td><%= check_box_tag :user_ids, user.id, @mywiki.users.include?(user), name: 'mywiki[user_ids][]' %></td>
           <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <%= submit_tag 'Add collaborators' %>
 <% end %>
