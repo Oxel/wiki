@@ -47,3 +47,6 @@ gem 'redcarpet'
 
 gem 'stripe'
 
+gem 'pundit'
+
+gem 'ffaker'

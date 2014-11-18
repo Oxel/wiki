@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include Pundit
   protect_from_forgery with: :exception
+<<<<<<< HEAD
 <<<<<<< .merge_file_c7x3KM
   	before_action :configure_permitted_parameters, if: :devise_controller?
 =======
@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
   		render text: "<h1>Hello</h1><p>Welcome home</p>"
   	end
 <<<<<<< .merge_file_c7x3KM
+=======
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  	rescue_from Pundit::NotAuthorizedError do |exception|
+      redirect_to root_url, alert: exception.message
+    end
+
+>>>>>>> add-roles
 
   	protected
 
