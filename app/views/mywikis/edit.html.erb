@@ -1,20 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    <script src="js/epiceditor.js"></script>
+</head>
+<body>
+    <div id="epiceditor"></div>
+</body>
+<script type="text/javascript">
+    var editor = new EpicEditor().load();
+</script>
+
 <h1>Edit Wiki</h1>
 
-<%= form_for @mywiki do |f| %>
-	<div>
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
-	<div>
-		<%= f.label :body %>
-		<%= f.text_area :body %>
-	</div>
+	<%= form_for @mywiki do |f| %>
+		<div>
+			<%= f.label :title %>
+			<%= markdown f.text_field :title, :size => 75 %>
+		</div>
+		<div>
+			<%= f.label :body %>
+			<%= markdown f.text_area :body, :rows => "35", :cols => "75" %>
+		</div>
+			
+		<%= f.submit %>
 
-	<% Collaborator.all.each do |collaborator| %>
-		<%= check_box_tag "user[collaborator_ids][]", collaborator.id %>
-		<%= collaborator.name %><br/>
 	<% end %>
-		
-	<%= f.submit %>
-
-<% end %>

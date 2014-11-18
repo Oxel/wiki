@@ -8,7 +8,7 @@ class MywikisController < ApplicationController
 
   def show
     @mywiki = Mywiki.find(params[:id])
-    redirect_to root_path
+    @users = User.where.not(id: current_user.id)
   end
 
   def index
@@ -40,7 +40,7 @@ class MywikisController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = "Wiki has not been updated."
-      render "edit"
+      redirect_to :back
     end
   end
 
@@ -56,7 +56,7 @@ class MywikisController < ApplicationController
   private
 
   def mywiki_params
-  	params.require(:mywiki).permit(:user, :title, :body)
+  	params.require(:mywiki).permit(:user, :title, :body, :user_ids => [])
   end
 
 end
