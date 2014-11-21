@@ -1,0 +1,11 @@
+<%= form_for @mywiki do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= markdown f.text_field :title, :size => 75 %>
+	</div>
+	<div id="epiceditor"></div>
+		<%= f.label :body %>
+		<%= f.hidden_field :body, :rows => "35", :cols => "75" %>
+	</div>		
+		<%= f.submit %>
+<% end %>
