@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114150937) do
+ActiveRecord::Schema.define(version: 20141121152001) do
 
   create_table "Mywikis_Users", id: false, force: true do |t|
     t.integer "user_id",   null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141114150937) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "stripe_customer_token"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
