@@ -1,6 +1,5 @@
 class MywikisController < ApplicationController
   
-  
 	def new
 		@mywiki = Mywiki.new
     authorize @mywiki
@@ -44,14 +43,12 @@ class MywikisController < ApplicationController
     end
   end
 
-
   def destroy
     @mywiki = Mywiki.destroy(params[:id])
     @mywiki.destroy
     flash[:notice] = "Successfully deleted message."
     redirect_to root_path
   end
-
 
   private
 

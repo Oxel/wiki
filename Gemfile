@@ -50,3 +50,5 @@ gem 'stripe'
 gem 'pundit'
 
 gem 'ffaker'
+
+gem 'epic-editor-rails'
