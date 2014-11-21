@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   get "allwikis" => "mywikis#show"
 
-  get "Upgrade" => "subscriptions#new"
+  get "upgrade" => "subscriptions#new"
   
 end
