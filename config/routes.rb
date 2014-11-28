@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :mywikis
   resources :subscriptions
 
-  devise_for :users
-
   authenticated :user do
     root to: 'mywikis#index', as: 'authenticated_root'
   end

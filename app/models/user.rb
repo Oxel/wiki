@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :collaborations
 	has_many :wiki_collaborations, through: :collaborations, source: :mywiki
-  
-
  
+  def is_premium?
+    subscription.stripe_card_token.present?
+  end
   
 end
